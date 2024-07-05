@@ -10,43 +10,25 @@ def check(deck1, deck2, target):
     return False
 
 def solution(coin, cards):
-    hand = cards[:len(cards) // 3]
-    deck = deque(cards[len(cards) // 3:])
+    n = len(cards)
+    hand = cards[:n // 3]
+    deck = deque(cards[n // 3:])
     pending = []
     turn = 1
     while coin >= 0 and deck:
         pending.append(deck.popleft())
         pending.append(deck.popleft())
         
-        if check(hand, hand, len(cards) + 1):
+        if check(hand, hand, n + 1):
             pass
-        elif coin >= 1 and check(hand, pending, len(cards) + 1):
+        elif coin >= 1 and check(hand, pending, n + 1):
             coin -= 1
-        elif coin >= 2 and check(pending, pending, len(cards) + 1):
+        elif coin >= 2 and check(pending, pending, n + 1):
             coin -= 2
         else:
             break
         turn += 1
     return turn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
