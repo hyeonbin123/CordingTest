@@ -1,15 +1,15 @@
 def star_score(star,answer):
     if star:
-        # if len(answer)>=2:
-        if star =="*":
-            answer[-1],answer[-2]=answer[-1]*2,answer[-2]*2
-        if star =="#":
-            answer[-1]=answer[-1]*-1
-        # else:
-        #     if star =="*":
-        #         answer[-1]=answer[-1]*2
-        #     if star =="#":
-        #         answer[-1]=answer[-1]*-1
+        if len(answer)>=2:
+            if star =="*":
+                answer[-1],answer[-2]=answer[-1]*2,answer[-2]*2
+            if star =="#":
+                answer[-1]=answer[-1]*-1
+        else:
+            if star =="*":
+                answer[-1]=answer[-1]*2
+            if star =="#":
+                answer[-1]=answer[-1]*-1
     return answer
 
 def solution(dartResult):
