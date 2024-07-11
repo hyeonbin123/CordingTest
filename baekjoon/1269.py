@@ -1,5 +1,4 @@
 def main():
-
     n,m=map(int,input().split())
     A = set(input().strip().split())
     B = set(input().strip().split())

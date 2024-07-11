@@ -13,9 +13,8 @@ def main():
     a, b, c, d, e, f = map(int, input().split())
     
     # 연립방정식 풀기
-    result = solve_system(a, b, c, d, e, f)
+    x, y = solve_system(a, b, c, d, e, f)
     
-    x, y = result
     print(x, y)
 
 if __name__ == "__main__":
