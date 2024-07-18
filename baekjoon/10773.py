@@ -7,7 +7,7 @@ def main():
         if n != 0:
             solution.append(n)
         else:
-            solution.pop()
+            solution.pop(-1)
     print(sum(solution))
 if __name__ == "__main__":
     main()

@@ -1,9 +1,18 @@
 def solution(p,dna,a,c,g,t):
     count=0
-    for i in range(len(dna)-p+1):
-        pwd = dna[i:i+p]
-        if pwd.count('A')>=a and pwd.count('C')>=c and pwd.count('G')>=g and pwd.count('T')>=t:
-            count+=1
+    counts={'A':0,'C':0,'G':0,'T':0}
+    for i in range(p):
+        counts[dna[i]] += 1
+
+    if counts['A'] >= a and counts['C'] >= c and counts['G'] >= g and counts['T'] >= t:
+        count += 1
+        
+    for i in range(p, len(dna)):
+        counts[dna[i-p]] -= 1
+        counts[dna[i]] += 1
+        
+        if counts['A'] >= a and counts['C'] >= c and counts['G'] >= g and counts['T'] >= t:
+            count += 1
     return count
 
 

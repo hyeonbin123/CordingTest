@@ -10,7 +10,7 @@ def solution(n, graph, times, target):
     for i in range(1, n + 1):
         for j in graph[i]:
             indegree[j] += 1
-    print(indegree)
+            
     q = deque()
     for i in range(1, n + 1):
         if indegree[i] == 0:
@@ -40,9 +40,6 @@ def main():
             graph[X].append(Y)
         
         W = int(input())
-        print(times)
-        print(graph)
-        print()
         print(solution(N, graph, times, W))
 
 if __name__ == "__main__":
