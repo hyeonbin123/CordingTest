@@ -1,0 +1,1 @@
+print('long '*(int(input().strip())//4)+'int')
