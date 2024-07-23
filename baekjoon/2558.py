@@ -1,0 +1,1 @@
+print(sum([int(input().strip()) for _ in range(2)]))
